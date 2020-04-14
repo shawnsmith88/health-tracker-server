@@ -1,6 +1,6 @@
-package com.ss.healthtrackerserver.Repositories;
+package com.ss.healthtrackerserver.repositories;
 
-import com.ss.healthtrackerserver.Models.WorkoutType;
+import com.ss.healthtrackerserver.models.WorkoutType;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

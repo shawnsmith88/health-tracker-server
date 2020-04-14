@@ -1,8 +1,8 @@
-package com.ss.healthtrackerserver.Controllers.api;
+package com.ss.healthtrackerserver.controllers.api;
 
-import com.ss.healthtrackerserver.Models.DTOs.WorkoutTypeDto;
-import com.ss.healthtrackerserver.Models.WorkoutType;
-import com.ss.healthtrackerserver.Repositories.WorkoutTypeRepository;
+import com.ss.healthtrackerserver.models.dtos.WorkoutTypeDto;
+import com.ss.healthtrackerserver.models.WorkoutType;
+import com.ss.healthtrackerserver.repositories.WorkoutTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

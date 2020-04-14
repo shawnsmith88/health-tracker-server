@@ -1,9 +1,9 @@
-package com.ss.healthtrackerserver.Controllers.api;
+package com.ss.healthtrackerserver.controllers.api;
 
-import com.ss.healthtrackerserver.Models.DTOs.WorkoutDto;
-import com.ss.healthtrackerserver.Models.Workout;
-import com.ss.healthtrackerserver.Repositories.WorkoutRepository;
-import jdk.jfr.ContentType;
+import com.ss.healthtrackerserver.models.dtos.WorkoutDto;
+import com.ss.healthtrackerserver.models.Workout;
+import com.ss.healthtrackerserver.repositories.WorkoutRepository;
+import com.ss.healthtrackerserver.services.IWorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -14,6 +14,8 @@ import java.util.List;
 
 @RestController
 public class WorkoutAPI {
+    @Autowired
+    IWorkoutService workoutService;
     @Autowired
     WorkoutRepository workoutRepository;
 
@@ -27,9 +29,7 @@ public class WorkoutAPI {
     @PostMapping("/workout")
     @CrossOrigin(origins={"*"})
     public ResponseEntity<Workout> addWorkout(@RequestBody WorkoutDto workoutDto){
-        Workout workout=new Workout();
-        workout.addDto(workoutDto);
-        workout=workoutRepository.save(workout);
+        Workout workout=workoutService.addNewWorkout(workoutDto);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(workout);
     }
     @PutMapping("/workout")

@@ -1,18 +1,21 @@
-package com.ss.healthtrackerserver.Models;
+package com.ss.healthtrackerserver.models;
 
-import com.ss.healthtrackerserver.Models.DTOs.WorkoutTypeDto;
+import com.ss.healthtrackerserver.models.dtos.WorkoutDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class WorkoutType {
+public class Workout {
     @Id
     private String id;
 
+    private String name;
     private String type;
 
-    public void addByDto(WorkoutTypeDto workoutTypeDto){
-        this.type=workoutTypeDto.getType();
+    public void addDto(WorkoutDto dto){
+        this.name=dto.getName();
+        this.type =dto.getType();
+
     }
 
     public String getId() {
@@ -21,6 +24,14 @@ public class WorkoutType {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getType() {

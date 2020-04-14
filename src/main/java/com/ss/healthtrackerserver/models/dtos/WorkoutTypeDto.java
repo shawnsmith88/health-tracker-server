@@ -1,4 +1,4 @@
-package com.ss.healthtrackerserver.Models.DTOs;
+package com.ss.healthtrackerserver.models.dtos;
 
 public class WorkoutTypeDto {
     private String type;
